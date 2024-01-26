@@ -1,0 +1,39 @@
+{% extends 'authapp/base.html' %} {% block content %}
+
+<div class="row container d-flex justify-content-center">
+  <div class="col-lg-4 mb-4">
+    <div class="card mt-5">
+      <div class="card-title text-center">
+        <h3>Contact us</h3>
+      </div>
+      <div class="card-body text-center">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %} {% include 'authapp/message.html' %}
+
+          <div class="form-group mb-3">{{ form.email }}</div>
+
+          <p class="text-sm text-success emailcheckinginput"></p>
+          <div
+            class="invalid-feedback EmailfeedBackArea"
+            style="display: none"
+          ></div>
+          <div class="form-group mb-3">{{form.username}}</div>
+          <div class="invalid-feedback" style="display: none"></div>
+          <p class="text-sm text-success usernamesuccessoutput"></p>
+
+          <div class="form-group mb-3">{{form.full_name }}</div>
+
+          <div class="form-group mb-3">{{form.uplaod_img}}</div>
+
+          <div class="form-group">
+            <input type="submit" class="btn btn-block btn-primary sumbitbtn" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<ul>
+  <li>{{email}}</li>
+</ul>
+{% endblock %}

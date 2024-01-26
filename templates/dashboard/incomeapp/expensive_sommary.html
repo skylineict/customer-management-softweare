@@ -1,0 +1,80 @@
+
+
+{% extends 'dashboard/sidebar/base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<style>
+
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 1ms;
+    width: 700px!important;
+    height: 400px!important;
+    
+}
+</style>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div
+    class="
+      d-flex
+      justify-content-between
+      flex-wrap flex-md-nowrap
+      align-items-center
+      pt-3
+      pb-2
+      mb-3
+      border-bottom
+    "
+  >
+
+  </div>
+
+
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb" class="mybread rounded">
+          <ol class="breadcrumb breadcrumbmain">
+            <li
+              class="breadcrumb-item active ms-3 mt-2 mb-3"
+              aria-current="page"
+            >
+              <a href="#"> weekly expenses</a>
+            </li>
+            <li
+              class="breadcrumb-item active ms-3 mt-2 mb-3"
+              aria-current="page"
+            >
+              monthly expenses
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-md-2 text-center addexpenses">
+        <a href="{% url 'addexpenses' %}" class="btn btn-outline-success mt-1 rounded-pill btn-sm"
+          >Add Expenses</a
+        >
+      </div>
+    </div>
+    <canvas id="expenseschart"class="chartjs-render-monitor"></canvas>
+    
+  </div>
+  
+
+
+<b>
+  
+</b>
+ 
+
+ 
+ 
+  
+</main>
+
+
+{% endblock %}
+
+

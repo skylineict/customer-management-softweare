@@ -1,0 +1,57 @@
+{% extends 'dashboard/sidebar/base.html' %} {% block content %}
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <h3 class="text-center pt-1 h4 text-uppercase text-mute">choose currency</h3>
+  <div
+    class="
+      d-flex
+      justify-content-between
+      flex-wrap flex-md-nowrap
+      align-items-center
+      pt-3
+      pb-2
+      mb-3
+      border-bottom
+    "
+  >
+    <div class="container mt-6">
+      <form method="POST">
+        {% csrf_token %} {% include 'authapp/message.html' %}
+        <div class="input-group sm">
+          <select
+            name="currency"
+            class="form-select"
+            id="inputGroupSelect04"
+            aria-label="Example select with button addon"
+          >
+            {% if userpreferences.currency %}
+            <option
+              name="currency"
+              selected
+              value="{{userpreferences.currency}}"
+            >
+              {{userpreferences.currency}}
+            </option>
+
+            {% endif %} {% for curent in currency %}
+
+            <option
+              name="currency"
+              value="{{ curent.name }}-
+            {{ curent.value}}"
+            >
+              {{ curent.name }}- {{ curent.value}}
+            </option>
+            {% endfor %}
+          </select>
+
+          <div class="input-group-append">
+            <input class="btn btn-primary" type="submit" value="save" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

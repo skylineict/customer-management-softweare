@@ -1,0 +1,20 @@
+<style>
+  .alart-sm {
+    height: 45px;
+  }
+</style>
+
+<div class="container">
+  {% if messages %}
+  <div class="messages">
+    {% for message in messages %} {% if message.tags %}
+    <div class=" ms-3 mt-2 mb-3  alert alart-sm {{ message.tags }}"
+      role="alert"
+    >
+      {% endif %} 
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

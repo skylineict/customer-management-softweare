@@ -11,26 +11,40 @@
     />
     <meta name="generator" content="Hugo 0.87.0" />
     <title>Customer management app{% block title %} {% endblock %}</title>
-
+    <link href="{% static 'bostrap/css/bootstrap.css' %}" rel="stylesheet" />
     <!-- Bootstrap core CSS -->
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js'></script>
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    <style>
+      .btn-secondary {
+    color: #fff;
+    background-color: #6c757d00;
+    border-color: #6c757d00;
+}
+
+.btn-check:focus + .btn-secondary, .btn-secondary:focus {
+    color: #fff;
+    background-color: #5c636a00;
+    border-color: #565e6400;
+    box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0);
+}
+    </style>
   </head>
   <body>
     <header
-      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow "style="
+      background-color: #020426!important;
+  "
     >
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
         >Company name</a
@@ -46,17 +60,17 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input
-        class="form-control form-control-dark w-100"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <a class="nav-link px-3" href="#">Sign out</a>
+    
+        <div class="dropdown mx-4">
+          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="openDropdown()" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           {{user.username}}
+          </button>
+          <ul class="dropdown-menu allmenu mx-4"  aria-labelledby="dropdownMenuButton1" style="margin-left: -70px!important;">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">setting</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
+          </ul>
         </div>
-      </div>
     </header>
 
     <div class="container-fluid">
@@ -68,20 +82,10 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
       integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
     ></script>
 
@@ -95,6 +99,25 @@
       integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
       crossorigin="anonymous"
     ></script>
+
+
+
+    <script src="{% static 'bostrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'bostrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/ajaxe.js' %}"></script>
+    <script src="{% static 'js/income.js' %}"></script>
+    <script src="{% static 'js/stats.js' %}"></script>
+    <script src="{% static 'js/incomesmain.js' %}"></script>
+  
+   
+    <script>
+      function openDropdown(){
+        $('.allmenu').toggle();
+      }
+    </script>
   </body>
+
+  
+ 
 </html>

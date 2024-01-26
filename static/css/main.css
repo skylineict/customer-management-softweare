@@ -113,14 +113,52 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
 
-.bg {
-  border: 2px solid red;
+/* style for form*/
+@media (min-width: 576px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
-.myitem {
-  align-content: center;
+.showpassword {
+  cursor: pointer;
+  transition: all;
 }
 
-.mycontainer {
-  padding-top: 6.8cm !important;
+.showpassword:hover {
+  transform: scale(11.125rem);
 }
+
+.mybread {
+  background-color: rgba(22, 3, 3, 0.116);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 40px;
+}
+.mybread li a {
+  color: rgb(4, 1, 15);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .addexpenses {
+    padding-top: 10px;
+  }
+}
+
+.expensescreation {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.678);
+  text-align: center;
+}
+
+.expenseform {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-weight: bold;
+}
+
+.card-adexpen {
+  background-color: #e6ffe649;
+}
+
